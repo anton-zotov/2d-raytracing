@@ -3,3 +3,11 @@
     padding: 0;
     overflow: hidden;
 }
+
+#performance {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
