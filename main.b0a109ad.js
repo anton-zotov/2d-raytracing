@@ -499,14 +499,15 @@ var SightZone = /** @class */function () {
     this._rayB = _rayB;
   }
   SightZone.prototype.draw = function (ctx) {
-    var length = 1;
+    var normalLength = 100;
     var zoneEnd = {
       x: (this._rayA.end.x + this._rayB.end.x) / 2,
       y: (this._rayA.end.y + this._rayB.end.y) / 2
     };
+    var length = Math.sqrt(Math.pow(zoneEnd.x - this._rayA.start.x, 2) + Math.pow(zoneEnd.y - this._rayA.start.y, 2)) || 1;
     var normalizedEnd = {
-      x: zoneEnd.x + (zoneEnd.x - this._rayA.start.x) * length,
-      y: zoneEnd.y + (zoneEnd.y - this._rayA.start.y) * length
+      x: zoneEnd.x + (zoneEnd.x - this._rayA.start.x) / length * normalLength,
+      y: zoneEnd.y + (zoneEnd.y - this._rayA.start.y) / length * normalLength
     };
     var gradient = ctx.createLinearGradient(this._rayA.start.x, this._rayA.start.y, normalizedEnd.x, normalizedEnd.y);
     gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
@@ -722,7 +723,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50189" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57350" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
