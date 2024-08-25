@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#performance {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
+
+
+/*# sourceMappingURL=/main.af46ece4.css.map */
