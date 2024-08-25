@@ -1,0 +1,22 @@
+{
+    "name": "2d-raycasting",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "parcel-bundler": "^1.12.5",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "jest": "^29.7.0",
+        "ts-jest": "^29.2.5"
+    }
+}
